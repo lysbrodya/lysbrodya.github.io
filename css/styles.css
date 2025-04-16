@@ -3,6 +3,8 @@
   --primary-font-family: system-ui, -apple-system, "Segoe UI", "Helvetica Neue",
     Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --accent-text-color: rgb(0, 0, 205);
+  --tect-color: rgb(104, 104, 104);
 }
 
 * {
@@ -16,6 +18,25 @@ body {
   height: 100%;
   font-family: var(--primary-font-family);
   line-height: 1.6;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  margin: 0;
+  height: 100vh;
+  /* background: #111; */
+  /* overflow: hidden; */
+  /* cursor: none;  */
+}
+.cursor-light {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  transition: transform 0.1s ease;
 }
 
 picture,
@@ -52,10 +73,10 @@ button {
 }
 a {
   text-decoration: none;
-  color: rgb(0, 0, 205);
+  color: var(--accent-text-color);
 }
 p {
-  color: rgb(104, 104, 104);
+  color: var(--tect-color);
   text-rendering: optimizelegibility;
   line-height: 1.5;
 }
@@ -580,4 +601,111 @@ body.dark-theme .wiget-title {
 .feed img.active {
   transform: translateX(0);
   opacity: 1;
+}
+img.lazy {
+  filter: blur(5px);
+  transition: filter 0.5s ease, transform 0.5s ease;
+}
+img.lazy.active {
+  filter: blur(0);
+  transform: translateY(0);
+}
+.animated {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease;
+}
+.animated.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* .parallax {
+  background-image: url("./images/bcg.jpg");
+  min-height: 400px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+.parallax {
+  background-image: url("../images/purple-watercolor-background-portrait-document-a4-1_1259374-231.avif");
+  min-height: 20px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  color: white;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.social__icons:hover {
+  transform: scale(1.2) rotate(15deg);
+  transition: transform 0.3s ease;
+}
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-right: 30px;
+  color: #2196f3;
+}
+.socials__item a {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.02em;
+  color: var(--accent-text-color);
+}
+.socials__link {
+  fill: var(--accent-text-color);
+}
+
+.socials__link:hover,
+.socials__link:focus {
+  background-color: var(--accent-text-color);
+}
+
+.social__icons {
+  fill: var(--filling-icon);
+  -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.socials__link:hover .social__icons,
+.socials__link:focus .social__icons {
+  fill: #ffffff;
+}
+.socials__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.socials__link:hover {
+  background-color: var(--accent-text-color);
+}
+.socials__link:focus {
+  background-color: var(--accent-text-color);
+}
+.logo {
+  border-radius: 4px;
+}
+.logo:hover {
+  transform: rotate(360deg);
+  transition: transform 1s ease;
 }

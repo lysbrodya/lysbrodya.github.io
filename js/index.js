@@ -40,28 +40,45 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-const lazyImages = document.querySelectorAll("img[loading='lazy']");
+document.addEventListener("DOMContentLoaded", () => {
+  const lazyImages = document.querySelectorAll("img.lazy");
 
-lazyImages.forEach((img) => {
-  img.addEventListener("load", onImgLoad, { once: true });
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src;
+          img.onload = () => {
+            img.classList.add("active");
+          };
+          obs.unobserve(img);
+        }
+      });
+    },
+    {
+      threshold: 0.1, // картинка должна быть хотя бы на 10% видна
+    }
+  );
+
+  lazyImages.forEach((img) => observer.observe(img));
 });
 
-function onImgLoad(e) {
-  console.log(e.target);
-  e.target.classList.add("active");
-}
+const animatedItems = document.querySelectorAll(".animated");
 
-// const imgMain = document.querySelector(".main-img");
-// const imgMain = document.querySelector(".imgMain");
+const observer = new IntersectionObserver((entries, obs) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
+      obs.unobserve(entry.target);
+    }
+  });
+});
 
-// window.addEventListener("resize", () => {
-//   if (window.innerWidth < 576) {
-//     imgMain.style.backgroundImage = `url('./images/main.jpg')`;
-//     imgMain.style.backgroundSize = "cover";
-//     imgMain.style.backgroundPosition = "center";
-//     console.log(imgMain);
+animatedItems.forEach((item) => observer.observe(item));
 
-//     // imgMain.innerHTML("");
-//   }
-//   console.log(`Current window width: ${window.innerWidth}px`);
-// });
+const light = document.querySelector(".cursor-light");
+
+document.addEventListener("mousemove", (e) => {
+  light.style.transform = `translate(${e.clientX - 50}px, ${e.clientY - 50}px)`;
+});

@@ -9,7 +9,9 @@
       href="./css/styles.css"
     />
   </head>
+  <!-- <div class="parallax"></div> -->
   <body>
+    <div class="cursor-light"></div>
     <header class="header" id="header">
         <div class="container">
             <nav class="nav">
@@ -23,8 +25,29 @@
                 </ul>
               </nav>
               <div class="nav">
-                <ul>
-                  <li>
+                <ul class="socials">
+                  <li class="socials__items">
+                    <a
+                      class="socials__link"
+                      href="https://instagram.com"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      <svg class="social__icons" width="20" height="20">
+                        <use href="./images/icons.svg#icon-instagram"></use></svg
+                    ></a>
+                  </li>
+                  <li class="socials__items">
+                    <a
+                      class="socials__link"
+                      href="https://twitter.com"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      ><svg class="social__icons" width="20" height="20">
+                        <use href="./images/icons.svg#icon-twitter"></use></svg
+                    ></a>
+                  </li>
+                  <li class="socials__items">
                     <a
                       class="socials__link"
                       href="https://facebook.com"
@@ -34,15 +57,14 @@
                         <use href="./images/icons.svg#icon-facebook"></use></svg
                     ></a>
                   </li>
-                  <li>
+                  <li class="socials__items">
                     <a
                       class="socials__link"
-                      href="https://instagram.com"
+                      href="https://linkedin.com"
                       target="_blank"
                       rel="noreferrer noopener"
-                    >
-                      <svg class="social__icons" width="20" height="20">
-                        <use href="./images/icons.svg#icon-instagram"></use></svg
+                      ><svg class="social__icons" width="20" height="20">
+                        <use href="./images/icons.svg#icon-linkedin"></use></svg
                     ></a>
                   </li>
                 </ul>
@@ -77,16 +99,17 @@
     <main class="main">
 <div class="featured-conteiner">      
     <h2 class="wiget-title">Featured Post</h2>
+    
     <section class="section featured">
     
     <div class="featured-part featured-main">
       
-      <a class="main-img" href="#"><img loading="lazy" width="400" height="350" class="imgMain" src="./images/main.jpeg" alt="town" /></a>
+      <a class="main-img" href="#"><img class="imgMain" src="./images/main.jpeg" alt="town" /></a>
     </div>
-    <div class="featured-part featured-article">
+    <div class="featured-part featured-article animated">
       <div class="first-lawyer"><a href="#" class="lawyer">Lawyer</a></div>
       <a href="" class="hero-title"><h3>Houston injury lawyers</h3></a>
-      <p>
+      <p class="animate">
         Houston injury lawyers &nbsp;- If you or a loved one has been
         seriously injured due to someone else's actions or negligence, you
         may be entit...
@@ -103,9 +126,9 @@
     <ul class="feed">
       <li>
         <a href="">
-          <img loading="lazy" width="400" height="350" src="./images/img-1.jpg" alt="tall bildings" />
+          <img class="lazy" width="400" height="350" data-src="./images/img-1.jpg" alt="tall bildings" />
         </a>
-        <div class="latest-article">
+        <div class="latest-article animated">
           <a href="" class="lawyer">Lawyer</a>
           <h3 >
             <a class="secondary-article" href="">Personal injury lawyers houston</a>
@@ -123,10 +146,10 @@
       </li>
       <li>
         <a href="">
-          <img loading="lazy" width="400" height="350" src="./images/img-2.jpg" alt="tall bildings" 
+          <img class="lazy" width="400" height="350" data-src="./images/img-2.jpg" alt="tall bildings" 
           />
         </a>
-        <div class="latest-article">
+        <div class="latest-article animated">
           <a href="" class="lawyer">Lawyer</a>
           <h3 >
             <a class="secondary-article" href="">Houston personal injury lawyers</a>
@@ -145,9 +168,9 @@
       </li>
       <li>
         <a href="">
-          <img loading="lazy" width="400" height="350" src="./images/img-3.jpg" alt="mall" />
+          <img class="lazy" width="400" height="350" data-src="./images/img-3.jpg" alt="mall" />
         </a>
-        <div class="latest-article">
+        <div class="latest-article animated">
           <a href="" class="lawyer">Lawyer</a>
           <h3 >
             <a class="secondary-article" href="">Car accident lawyer moreno valley</a>
@@ -166,9 +189,9 @@
       </li>
       <li>
         <a href="">
-          <img loading="lazy" width="400" height="350" src="./images/img-4.jpg" alt="Car accident" />
+          <img class="lazy" width="400" height="350" data-src="./images/img-4.jpg" alt="Car accident" />
         </a>
-        <div class="latest-article">
+        <div class="latest-article animated">
           <a href="" class="lawyer">Lawyer</a>
           <h3 >
             <a class="secondary-article" href="">Car accident lawyer augusta</a>
@@ -187,9 +210,9 @@
       </li>
       <li>
         <a href="">
-          <img loading="lazy" width="400" height="350" src="./images/img-5.jpg" alt="Abstraction psyhodelic" />
+          <img class="lazy" width="400" height="350" data-src="./images/img-5.jpg" alt="Abstraction psyhodelic" />
         </a>
-        <div class="latest-article">
+        <div class="latest-article animated">
           <a href="" class="lawyer">Degree online</a>
           <h3>
             <a class="secondary-article" href="">Parapsychology degree online</a>
@@ -208,9 +231,9 @@
       </li>
       <li>
         <a href="">
-          <img loading="lazy" width="400" height="350" src="./images/img-6.jpg" alt="sity tall bildings" />
+          <img class="lazy" width="400" height="350" data-src="./images/img-6.jpg" alt="sity tall bildings" />
         </a>
-        <div class="latest-article">
+        <div class="latest-article animated">
           <a href="" class="lawyer">Lawyer</a>
           <h3 >
             <a class="secondary-article" href="">Personal injury attorney houston</a>
@@ -231,14 +254,16 @@
   </section></div>
       <section class="section sidebar">
         <div class="sidebar-article">
-          <div class="sidebar-block"></div>
+          <div class="sidebar-block">
+            <img class="logo" src="./images/logo1.jpg" alt="">
+          </div>
         </div>
       </section>
     </main>
     <footer class="footer">
       <hr style="display: block"/>
         <div class="footer-block">
-            <div class="footer-logo"><a href=""><img loading="lazy" width="400" height="350" src="./images/logo.png" alt="logo"></a></div>
+            <div class="footer-logo"><a href=""><img class="lazy" width="400" height="350" data-src="./images/logo.png" alt="logo"></a></div>
             <div class="badge2" style="font-size:11px"><a href="https://web.archive.org/web/20240910081119/https://www.onlinedegreeforcriminaljustice.com/p/contact-us-var-blogid.html?m=1">contact </a> | <a href="https://web.archive.org/web/20240910081119/https://www.onlinedegreeforcriminaljustice.com/p/disclaimer-for-onlinedegreeforcriminalj.html?m=1">Disclaimer </a> | <a href="https://web.archive.org/web/20240910081119/https://www.onlinedegreeforcriminaljustice.com/p/if-you-require-any-more-information-or.html?m=1">privacy policy </a></div>
             <div><p>Copyright © 2024 <a href="/web/20240910081119/https://www.onlinedegreeforcriminaljustice.com/" itemprop="url" title=""><span itemprop="copyrightHolder">Online degrees</span></a>. All rights reserved.</p></div>
     </footer>
