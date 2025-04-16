@@ -43,11 +43,12 @@ document.addEventListener("DOMContentLoaded", () => {
 const lazyImages = document.querySelectorAll("img[loading='lazy']");
 
 lazyImages.forEach((img) => {
-  img.addEventListener("load", onImgLoad);
+  img.addEventListener("load", onImgLoad, { once: true });
 });
 
 function onImgLoad(e) {
   console.log(e.target);
+  e.target.classList.add("active");
 }
 
 // const imgMain = document.querySelector(".main-img");
